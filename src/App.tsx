@@ -488,25 +488,14 @@ export default function App() {
               {/* Text content */}
               <div className="text-center sm:text-right flex-1">
                 <span className="text-[10px] sm:text-xs font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full inline-block mb-2 border border-blue-100">
-                  مطور البرمجيات ومستشار التسجيل المعتمد
+                  مطور الدليل ومستشار التسجيل
                 </span>
                 <h3 className="text-xl sm:text-3xl font-extrabold text-gray-800 mb-2">
                   م. وليد عبد الله منور
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed max-w-2xl">
-                  مهندس برمجيات متخصص في بناء وتوثيق حسابات مطوري المتاجر الذكية وحل مشاكل الدفع وتطابق البيانات لمطوري الهواتف والشركات الناشئة في الوطن العربي. يسعدني تقديم الاستشارات التقنية لضمان تفعيل حسابك بدون رفض أو حظر تلقائي.
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl font-medium">
+                  تم تطوير هذا الدليل بواسطة المطور لمساعدتكم في اجتياز خطوات التحقق بنجاح. للتواصل والاستفسارات يمكنك عبر القنوات التالية:
                 </p>
-                
-                {/* Features of contact */}
-                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-y-2 gap-x-4 mt-4 text-[11px] text-gray-500">
-                  <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-green-500" /> استشارة مخصصة للشركات والأفراد
-                  </span>
-                  <span className="hidden sm:inline text-gray-300">•</span>
-                  <span className="flex items-center gap-1">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-green-500" /> مراجعة الوثائق وكشوف الحسابات البنكية
-                  </span>
-                </div>
               </div>
             </div>
 
