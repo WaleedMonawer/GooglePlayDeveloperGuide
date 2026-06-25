@@ -1,0 +1,6 @@
+{
+  "name": "Google Play Developer Guide",
+  "description": "دليل تفاعلي متكامل باللغة العربية لشرح خطوات فتح حساب مطور جوجل بلاي للأفراد والشركات والتحقق من الهوية والأوراق المطلوبة لضمان القبول بدون عوائق.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
