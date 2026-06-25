@@ -12,7 +12,7 @@ interface DocumentChecklistProps {
 }
 
 // Asset path generated in step 1
-const verificationImg = "/src/assets/images/verification_process_1782396285315.jpg";
+import verificationImg from "../assets/images/verification_process_1782396285315.jpg";
 
 export default function DocumentChecklist({ platform }: DocumentChecklistProps) {
   const [selectedCountryCode, setSelectedCountryCode] = useState<string>("SA");

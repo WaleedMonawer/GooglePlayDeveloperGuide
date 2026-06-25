@@ -31,7 +31,7 @@ import FaqSection from "./components/FaqSection";
 import DunsGuide from "./components/DunsGuide";
 
 // Asset paths generated in step 1
-const heroImg = "/src/assets/images/play_developer_hero_1782396250010.jpg";
+import heroImg from "./assets/images/play_developer_hero_1782396250010.jpg";
 
 export default function App() {
   const [platform, setPlatform] = useState<"google" | "apple">("google");
@@ -243,8 +243,186 @@ export default function App() {
       {/* Main Interactive Guide Section */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
+        {/* 🧭 دليل القراءة السريعة وخارطة تصفح الدليل التفاعلية */}
+        <section className="mb-12 bg-gradient-to-br from-blue-50/70 via-white to-indigo-50/40 rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-sm relative overflow-hidden text-right">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-blue-100/40 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-indigo-100/30 rounded-full blur-2xl"></div>
+
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-6 border-b border-blue-100/60">
+            <div>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black text-blue-700 bg-blue-100/60 border border-blue-200/50 mb-2.5">
+                <Compass className="w-3.5 h-3.5 animate-spin-slow text-[#1A73E8]" /> بوصلة إرشادية لتصفح الدليل
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-gray-950">
+                كيف تقرأ وتستفيد من هذا الدليل؟ (ابدأ من هنا 👇)
+              </h3>
+              <p className="text-gray-600 text-xs sm:text-sm mt-1 font-medium">
+                لتفادي التشتت بين الأيقونات والقوائم، اتبع هذا التسلسل المنظم والموصى به خطوة بخطوة للوصول إلى هدفك النهائي بأمان:
+              </p>
+            </div>
+            
+            <div className="flex gap-2 self-start md:self-center shrink-0">
+              <span className="px-3 py-1.5 bg-white text-xs font-extrabold text-blue-700 rounded-xl border border-blue-100 shadow-sm">
+                الخطوات المقترحة: 4 خطوات رئيسية
+              </span>
+            </div>
+          </div>
+
+          {/* The 4 Progressive steps */}
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Step 1 */}
+            <button
+              onClick={() => {
+                setActiveModule("comparison");
+                const el = document.getElementById("module-switcher-container");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`group text-right p-5 rounded-2xl border transition-all duration-300 hover:scale-[1.02] flex flex-col justify-between h-full bg-white cursor-pointer ${
+                activeModule === "comparison"
+                  ? "border-[#1A73E8] ring-2 ring-blue-100 shadow-md"
+                  : "border-gray-200 hover:border-blue-300 hover:shadow-sm"
+              }`}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm shadow-sm ${
+                    activeModule === "comparison" ? "bg-[#1A73E8] text-white" : "bg-blue-50 text-[#1A73E8]"
+                  }`}>
+                    1
+                  </span>
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-blue-500 transition-colors">خطوة البداية</span>
+                </div>
+                <h4 className="font-extrabold text-gray-950 text-sm sm:text-base mb-2 group-hover:text-blue-600 transition-colors">
+                  1. مقارنة نوع الحساب
+                </h4>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4">
+                  قارن بدقة بين متطلبات الحساب الفردي والشركة، وافهم الفروق الشاسعة والالتزامات المالية لتتجنب حظر حسابك الجديد.
+                </p>
+              </div>
+              <div className={`mt-auto text-xs font-extrabold flex items-center gap-1 ${
+                activeModule === "comparison" ? "text-[#1A73E8]" : "text-gray-500 group-hover:text-[#1A73E8]"
+              }`}>
+                <span>افتح المقارنة والتحليلات</span>
+                <ChevronLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
+              </div>
+            </button>
+
+            {/* Step 2 */}
+            <button
+              onClick={() => {
+                setActiveModule("checklist");
+                const el = document.getElementById("module-switcher-container");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`group text-right p-5 rounded-2xl border transition-all duration-300 hover:scale-[1.02] flex flex-col justify-between h-full bg-white cursor-pointer ${
+                activeModule === "checklist"
+                  ? "border-green-500 ring-2 ring-green-100 shadow-md"
+                  : "border-gray-200 hover:border-green-300 hover:shadow-sm"
+              }`}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm shadow-sm ${
+                    activeModule === "checklist" ? "bg-green-500 text-white" : "bg-green-50 text-green-700"
+                  }`}>
+                    2
+                  </span>
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-green-500 transition-colors">تأكيد الأوراق</span>
+                </div>
+                <h4 className="font-extrabold text-gray-950 text-sm sm:text-base mb-2 group-hover:text-green-600 transition-colors">
+                  2. تجهيز مستندات بلدك
+                </h4>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4">
+                  اختر بلدك العربي لتعرف المستندات القانونية وكشوف الحسابات المعتمدة المطابقة لشروط {isGoogle ? "جوجل" : "آبل"} لتفادي الرفض الفوري.
+                </p>
+              </div>
+              <div className={`mt-auto text-xs font-extrabold flex items-center gap-1 ${
+                activeModule === "checklist" ? "text-green-600" : "text-gray-500 group-hover:text-green-600"
+              }`}>
+                <span>استعرض وثائق بلدك</span>
+                <ChevronLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
+              </div>
+            </button>
+
+            {/* Step 3 */}
+            <button
+              onClick={() => {
+                setActiveModule("simulator");
+                const el = document.getElementById("module-switcher-container");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`group text-right p-5 rounded-2xl border transition-all duration-300 hover:scale-[1.02] flex flex-col justify-between h-full bg-white cursor-pointer ${
+                activeModule === "simulator"
+                  ? "border-purple-500 ring-2 ring-purple-100 shadow-md"
+                  : "border-gray-200 hover:border-purple-300 hover:shadow-sm"
+              }`}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm shadow-sm ${
+                    activeModule === "simulator" ? "bg-purple-500 text-white" : "bg-purple-50 text-purple-700"
+                  }`}>
+                    3
+                  </span>
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-purple-500 transition-colors">التدريب العملي</span>
+                </div>
+                <h4 className="font-extrabold text-gray-950 text-sm sm:text-base mb-2 group-hover:text-purple-600 transition-colors">
+                  3. محاكي التسجيل التفاعلي
+                </h4>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4">
+                  خض تجربة تسجيل افتراضية بالصور التفاعلية ومحاكاة الدفع والقبول لكشف الأخطاء وتجنب الرفض المالي قبل البداية الفعلية.
+                </p>
+              </div>
+              <div className={`mt-auto text-xs font-extrabold flex items-center gap-1 ${
+                activeModule === "simulator" ? "text-purple-600" : "text-gray-500 group-hover:text-purple-600"
+              }`}>
+                <span>ابدأ محاكاة التسجيل الافتراضي</span>
+                <ChevronLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
+              </div>
+            </button>
+
+            {/* Step 4 */}
+            <button
+              onClick={() => {
+                setActiveModule("advisor");
+                const el = document.getElementById("module-switcher-container");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`group text-right p-5 rounded-2xl border transition-all duration-300 hover:scale-[1.02] flex flex-col justify-between h-full bg-white cursor-pointer ${
+                activeModule === "advisor"
+                  ? "border-amber-500 ring-2 ring-amber-100 shadow-md"
+                  : "border-gray-200 hover:border-amber-500 hover:shadow-sm"
+              }`}
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`w-8 h-8 rounded-xl font-bold flex items-center justify-center text-sm shadow-sm ${
+                    activeModule === "advisor" ? "bg-amber-500 text-white" : "bg-amber-50 text-amber-700"
+                  }`}>
+                    4
+                  </span>
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-amber-500 transition-colors">الدعم والحلول</span>
+                </div>
+                <h4 className="font-extrabold text-gray-950 text-sm sm:text-base mb-2 group-hover:text-amber-600 transition-colors">
+                  4. المستشار وحل العقبات
+                </h4>
+                <p className="text-gray-600 text-xs leading-relaxed mb-4">
+                  إذا واجهتك عقبات مخصصة مثل تفعيل DUNS أو مشاكل كشف الحساب والرفض، اسأل مستشارك الذكي ليقدم لك الحلول فوراً.
+                </p>
+              </div>
+              <div className={`mt-auto text-xs font-extrabold flex items-center gap-1 ${
+                activeModule === "advisor" ? "text-amber-600" : "text-gray-500 group-hover:text-amber-600"
+              }`}>
+                <span>اطرح سؤالك على المستشار AI</span>
+                <ChevronLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
+              </div>
+            </button>
+          </div>
+        </section>
+        
         {/* Module Switcher Buttons */}
-        <div className="flex flex-wrap gap-2.5 justify-center mb-10 bg-gray-200/60 p-1.5 rounded-2xl max-w-4xl mx-auto">
+        <div id="module-switcher-container" className="flex flex-wrap gap-2.5 justify-center mb-10 bg-gray-200/60 p-1.5 rounded-2xl max-w-4xl mx-auto">
           <button
             id="module-comparison-btn"
             onClick={() => setActiveModule("comparison")}

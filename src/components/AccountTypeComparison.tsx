@@ -13,7 +13,7 @@ interface AccountTypeComparisonProps {
 }
 
 // Asset path generated in step 1
-const accountTypesImg = "/src/assets/images/account_types_comparison_1782396268265.jpg";
+import accountTypesImg from "../assets/images/account_types_comparison_1782396268265.jpg";
 
 export default function AccountTypeComparison({ platform }: AccountTypeComparisonProps) {
   const [activeTab, setActiveTab] = useState<"individual" | "organization">("individual");
